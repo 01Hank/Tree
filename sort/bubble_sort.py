@@ -10,7 +10,7 @@ def sort(list):
         num += 1
         for y in range(size - x - 1):
             if list[y] > list[y + 1]:
-                list[y],list[y+1] = list[y+1],list[y]
+                list[y], list[y + 1] = list[y + 1], list[y]
 
     print '执行轮次数：' + str(num)
 
@@ -39,9 +39,9 @@ def optimization_sort(list):
 
     print '执行轮次数：' + str(num)
 
+
 if __name__ == '__main__':
-    arr = [9,6,2,5,1,8,3,4,7]
+    arr = [9, 6, 2, 5, 1, 8, 3, 4, 7]
     sort(arr)
     for i in arr:
         print i
-

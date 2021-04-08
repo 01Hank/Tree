@@ -5,6 +5,7 @@
 # 递归结果集，减少递归重复计算
 result = {}
 
+
 def numWays(n):
     if n == 0:
         return 1

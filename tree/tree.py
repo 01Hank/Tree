@@ -5,7 +5,7 @@ class node(object):
     node_num = 0
 
     # 初始函数
-    def __init__(self,left_node,right_node,val):
+    def __init__(self, left_node, right_node, val):
         # 左节点
         self.left_node = left_node
         # 右节点
@@ -15,7 +15,7 @@ class node(object):
         node.node_num += 1
 
     # 放入左节点
-    def put_left_node(self,node):
+    def put_left_node(self, node):
         if self.left_node == None:
             self.left_node = node
 
