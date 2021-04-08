@@ -102,6 +102,20 @@ def issame(root1, root2):
         return False
 
 
+# 反转树
+def inverTree(root):
+    if root is None or root.left_node is None or root.right_node is None:
+        return root
+
+    #反转左子树
+    left_node = inverTree(root.left_node)
+    # 反转右子树
+    right_node = inverTree(root.right_node)
+
+    #重新赋值
+    root.left_node = right_node
+    root.right_node = left_node
+    return root
 
 # 输出二叉树
 def print_tree(root):
@@ -155,6 +169,9 @@ if __name__ == '__main__':
     # graorder(root_node)
     #dep = maxdepth(root_node)
     #print str(dep)
-    preorder(root_node)
-    print_tree(root_node)
+    # preorder(root_node)
+    # print_tree(root_node)
+    root_node = inverTree(root_node)
+
+    print '1'
 
