@@ -74,7 +74,53 @@ def endorder(root):
 
 
 
+# 广度遍历
+def graorder(root):
+       if root is None:
+           print root.val
+           return
+       queue = [root]
+       while queue:
+           res = []
+           for item in queue:
+               # node_all.append(root.val)
+               print item.val
+               if item.left_node:
+                   res.append(item.left_node)
+               if item.right_node:
+                   res.append(item.right_node)
+               queue = res
 
+
+# 比较两棵树是否相等
+def issame(root1, root2):
+    if root1 is None and root2 is None:
+        return True
+    elif root1 and root2:
+        return root1.val == root2.val and issame(root1.left_node, root2.left_node) and issame(root1.right_node, root2.right_node)
+    else:
+        return False
+
+
+
+# 输出二叉树
+def print_tree(root):
+    # 前序输出
+    if node_all:
+        # 根的深度
+        dep = maxdepth(root_node)
+        space = '  '
+        for index,item in enumerate(node_all):
+            if index%3 == 0:
+                print str(space * dep) + str(item)
+            elif index%3 == 1:
+                print '/'
+                print str(space * (dep - 1)) + str(item),
+            elif index%3 == 2:
+                print '\\',
+                print str(space * (dep + 1)) + str(item),
+
+# 反转二叉树
 
 
 if __name__ == '__main__':
@@ -105,8 +151,10 @@ if __name__ == '__main__':
 
     # node_all[0] = root_node.val
     # print_tree_all(root_node,0,0)
-    preorder(root_node)
-    dep = maxdepth(root_node)
-    print str(dep)
 
+    # graorder(root_node)
+    #dep = maxdepth(root_node)
+    #print str(dep)
+    preorder(root_node)
+    print_tree(root_node)
 
